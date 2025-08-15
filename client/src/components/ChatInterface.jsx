@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 // src/components/ChatInterface.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -45,10 +47,15 @@ const ChatInterface = ({ persona, onBack }) => {
     setInputValue('');
 
     try {
+      // Determine the base URL based on environment
+      const baseURL = import.meta.env.PROD 
+        ? 'https://persona-gpt-delta.vercel.app' // Your deployed API
+        : ''; // Local development uses proxy
+
       // Determine which API endpoint to use based on persona
       const endpoint = persona.name === 'Hitesh Choudhary' 
-        ? 'http://localhost:3001/api/chat/hitesh'
-        : 'http://localhost:3001/api/chat/piyush';
+        ? `${baseURL}/api/chat/hitesh`
+        : `${baseURL}/api/chat/piyush`;
 
       // Build conversation history for context
       const conversationHistory = messages.map(msg => ({
