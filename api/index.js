@@ -11,10 +11,10 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors({
     origin: [
+        'https://persona-gpt-8oit.vercel.app',
         'http://localhost:5173', 
         'http://localhost:3000', 
-        'http://127.0.0.1:5173',
-        'https://persona-gpt-8oit.vercel.app'
+        'http://127.0.0.1:5173', 
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],

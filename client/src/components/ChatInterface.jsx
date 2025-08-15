@@ -48,9 +48,8 @@ const ChatInterface = ({ persona, onBack }) => {
 
     try {
       // Determine the base URL based on environment
-      const baseURL = import.meta.env.PROD 
-        ? 'https://persona-gpt-delta.vercel.app' // Your deployed API
-        : ''; // Local development uses proxy
+      const baseURL = 'https://persona-gpt-delta.vercel.app' // Your deployed API
+      // Local development uses proxy
 
       // Determine which API endpoint to use based on persona
       const endpoint = persona.name === 'Hitesh Choudhary' 
