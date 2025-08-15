@@ -135,7 +135,7 @@ const ChatInterface = ({ persona, onBack }) => {
               onClick={onBack}
               className="self-start mb-6 p-3 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm transition-all"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
             </motion.button>
