@@ -2,11 +2,13 @@
 // src/components/HeroSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import FeaturedCarousel from './FeaturedCarousel';
 
 const HeroSection = ({ personas, onSelectPersona }) => {
   return (
   // Changed container to use min-h-screen and full width for full viewport height and responsiveness
-  <div className="min-h-screen w-full flex flex-col justify-center px-2 sm:px-4 py-8 sm:py-12">
+<div className="min-h-screen w-full flex flex-col justify-center px-2 sm:px-4 py-8 sm:py-12">
+  <FeaturedCarousel />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
