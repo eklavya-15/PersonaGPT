@@ -118,7 +118,7 @@ const ChatInterface = ({ persona, onBack }) => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex">
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex">
       {/* Left Side - Persona Info Panel */}
       <div className="w-full lg:w-1/2 xl:w-2/5 min-h-screen flex flex-col justify-center px-4 sm:px-8 py-8">
         <motion.div
@@ -154,12 +154,12 @@ const ChatInterface = ({ persona, onBack }) => {
                     persona.name.charAt(0)
                   )}
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-3">{persona.name}</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-200 mb-3">{persona.name}</h1>
                 <p className={`text-lg sm:text-xl font-semibold mb-4 ${persona.color.replace('from-', 'text-').split(' ')[0]}`}>
                   {persona.tagline}
                 </p>
-                <p className="text-gray-600 leading-relaxed mb-4">{persona.description}</p>
-                <p className="text-sm text-gray-500">{persona.subscribers}</p>
+                <p className="text-gray-300 leading-relaxed mb-4">{persona.description}</p>
+                <p className="text-sm text-gray-400">{persona.subscribers}</p>
               </div>
 
               {/* Status Indicator */}
@@ -180,10 +180,10 @@ const ChatInterface = ({ persona, onBack }) => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="h-full flex flex-col bg-white/80 backdrop-blur-sm border-l border-gray-200/50"
+          className="h-full flex flex-col bg-gray-800/80 backdrop-blur-sm border-l border-gray-600/50"
         >
           {/* Chat Header */}
-          <div className="py-6 px-8 border-b border-gray-200/50 bg-white/90 backdrop-blur-sm">
+          <div className="py-6 px-8 border-b border-gray-600/50 bg-gray-800/90 backdrop-blur-sm">
             <div className="flex items-center">
               <div className={`w-12 h-12 rounded-xl ${persona.color} flex items-center justify-center text-white text-xl font-bold shadow-lg overflow-hidden`}>
                 {persona.image ? (
@@ -197,14 +197,14 @@ const ChatInterface = ({ persona, onBack }) => {
                 )}
               </div>
               <div className="ml-4">
-                <h2 className="text-xl font-bold text-gray-800">Chat with {persona.name}</h2>
-                <p className="text-sm text-gray-500">Ask me anything about my expertise!</p>
+                <h2 className="text-xl font-bold text-gray-200">Chat with {persona.name}</h2>
+                <p className="text-sm text-gray-400">Ask me anything about my expertise!</p>
               </div>
             </div>
           </div>
 
           {/* Chat Messages */}
-          <div className="flex-1 overflow-y-auto p-6 bg-gradient-to-b from-white/50 to-gray-50/50">
+          <div className="flex-1 overflow-y-auto p-6 bg-gradient-to-b from-gray-800/50 to-gray-900/50">
             <div className="max-w-2xl">
               {messages.map((message) => (
                 <motion.div
@@ -231,7 +231,7 @@ const ChatInterface = ({ persona, onBack }) => {
                   <div className={`max-w-[80%] rounded-2xl px-5 py-4 shadow-lg ${
                     message.sender === 'user' 
                       ? `bg-gradient-to-r ${persona.color} text-white rounded-tr-none` 
-                      : 'bg-white text-gray-800 rounded-tl-none border border-gray-100'
+                      : 'bg-gray-700 text-gray-200 rounded-tl-none border border-gray-600'
                   }`}>
                     <p className="whitespace-pre-wrap leading-relaxed">{message.text}</p>
                     <div className={`text-xs mt-2 ${message.sender === 'user' ? 'text-white/70' : 'text-gray-400'}`}>
@@ -240,7 +240,7 @@ const ChatInterface = ({ persona, onBack }) => {
                   </div>
                   
                   {message.sender === 'user' && (
-                    <div className="w-10 h-10 rounded-xl bg-gray-200 flex items-center justify-center text-gray-600 font-bold ml-3 shadow-md">
+                    <div className="w-10 h-10 rounded-xl bg-gray-600 flex items-center justify-center text-gray-200 font-bold ml-3 shadow-md">
                       Y
                     </div>
                   )}
@@ -251,14 +251,14 @@ const ChatInterface = ({ persona, onBack }) => {
           </div>
 
           {/* Input Area */}
-          <div className="p-6 bg-white/90 backdrop-blur-sm border-t border-gray-200/50">
+          <div className="p-6 bg-gray-800/90 backdrop-blur-sm border-t border-gray-600/50">
             <div className="flex gap-3">
               <textarea
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={`Message ${persona.name}...`}
-                className="flex-1 border border-gray-300 rounded-2xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none shadow-sm bg-white/80 backdrop-blur-sm"
+                className="flex-1 border border-gray-600 rounded-2xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none shadow-sm bg-gray-700/80 backdrop-blur-sm text-gray-200 placeholder-gray-400"
                 rows={1}
               />
               <motion.button

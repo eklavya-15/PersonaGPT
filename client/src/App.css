@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #1a1a2e; /* Dark bluish background */
+  color: #e0e0e0; /* Light text color */
 }
 
 .logo {
@@ -10,12 +12,15 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  filter: drop-shadow(0 0 2em #646cffaa);
+  background-color: #1a1a2e; /* Dark bluish background */
+  border-radius: 10px; /* Rounded corners */
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  background-color: #2a2a4e; /* Slightly lighter bluish background on hover */
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  background-color: #2a2a4e; /* Slightly lighter bluish background on hover */
 }
 
 @keyframes logo-spin {
@@ -35,8 +40,11 @@
 
 .card {
   padding: 2em;
+  background-color: #2a2a4e; /* Slightly lighter bluish background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .read-the-docs {
-  color: #888;
+  color: #ffffff; /* Brighter text color for better readability */
 }

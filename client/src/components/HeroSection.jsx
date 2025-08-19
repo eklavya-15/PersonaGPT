@@ -2,13 +2,11 @@
 // src/components/HeroSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import FeaturedCarousel from './FeaturedCarousel';
 
 const HeroSection = ({ personas, onSelectPersona }) => {
   return (
   // Changed container to use min-h-screen and full width for full viewport height and responsiveness
 <div className="min-h-screen w-full flex flex-col justify-center px-2 sm:px-4 py-8 sm:py-12">
-  <FeaturedCarousel />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,7 +16,7 @@ const HeroSection = ({ personas, onSelectPersona }) => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
           Chat with Expert AI Personas
         </h1>
-        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+<p className="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
           Connect with industry experts and get personalized guidance on your learning journey
         </p>
       </motion.div>
@@ -38,7 +36,7 @@ const HeroSection = ({ personas, onSelectPersona }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="mt-10 sm:mt-16 text-center text-gray-500 text-sm"
+        className="mt-10 sm:mt-16 text-center text-gray-300 text-sm"
       >
         <p>Select an expert to start your conversation</p>
         <div className="mt-2 flex justify-center">
@@ -74,15 +72,15 @@ const PersonaCard = ({ persona, onSelect }) => {
               )}
             </div>
             <div className="sm:ml-4">
-              <h2 className="text-lg sm:text-2xl font-bold text-gray-800">{persona.name}</h2>
+<h2 className="text-lg sm:text-2xl font-bold text-gray-200">{persona.name}</h2>
               <p className={`text-base sm:text-lg font-semibold ${persona.color.replace('from-', 'text-').split(' ')[0]}`}>
                 {persona.tagline}
               </p>
             </div>
           </div>
 
-          <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed">{persona.description}</p>
-          <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">{persona.subscribers}</p>
+<p className="text-gray-200 mb-4 sm:mb-6 leading-relaxed">{persona.description}</p>
+<p className="text-xs sm:text-sm text-gray-300 mb-4 sm:mb-6">{persona.subscribers}</p>
         </div>
         {/* Button container with mt-auto to push to bottom */}
         <div className="mt-auto">
